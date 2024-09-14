@@ -13,7 +13,6 @@ ollama_env/
 ├── pyvenv.cfg
 └── src/
     ├── index.html
-    ├── indog.html
     ├── script.js
     ├── style.css
     └── app.py
