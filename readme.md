@@ -1,4 +1,4 @@
-# OLLAMA-REST Project
+# OLLAMA-Chat Project
 
 This project appears to be a web application that interfaces with OLLAMA (Open Large Language Model Application), possibly providing a RESTful API or web interface for interacting with language models.
 
