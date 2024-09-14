@@ -1,0 +1,110 @@
+/* Basic Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+}
+
+.chat-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.message {
+    max-width: 70%;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.message p {
+    margin: 0;
+    border-radius: 20px;
+}
+
+.receiver {
+    background-color: #e1f5fe;
+    align-self: flex-start;
+    text-align: left;
+}
+
+.sender {
+    background-color: #c8e6c9;
+    align-self: flex-end;
+    text-align: right;
+}
+
+.message.receiver, .message.sender {
+    display: inline-block;
+    clear: both;
+    position: relative;
+}
+
+.message.receiver::before {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-right-color: #e1f5fe;
+    border-left-width: 0;
+    margin-top: -10px;
+}
+
+.message.sender::before {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    width: 0;
+    height: 0;
+  
+    border-left-color: #c8e6c9;
+    border-right-width: 0;
+    margin-top: -10px;
+}
+
+/* Message Box Styling */
+.message-box {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.message-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.send-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.send-button:hover {
+    background-color: #0056b3;
+}
