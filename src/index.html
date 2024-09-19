@@ -1,80 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/uuid@10.0.0/dist/index.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css" rel="stylesheet" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Document</title>
-</head>
+    <link rel="stylesheet" href="style.css" />
 
-<body>
-    <div class="h-screen w-screen bg-gradient-to-r from-violet-500 to-fuchsia-500 ">
-        <div class="flex flex-col justify-center items-center h-full py-5">
-            <div class="bg-white/15 container backdrop-blur-xl w-full h-full rounded-lg shadow-lg mb-5 flex">
-                
-               
-             <div class="left-chat self-start">
-                <div class="bg-white/20 rounded-lg p-3 m-2 text-white text-sm w-1/2 rounded-r-none rounded-tl-none">
-                    Hello
-                </div>
-                <div class="bg-white/20 rounded-lg p-3 m-2 text-white text-sm w-1/2 rounded-r-none rounded-tl-none">
-                    How are you?
-                </div>
-                <div class="bg-white/20 rounded-lg p-3 m-2 text-white text-sm w-1/2 rounded-r-none rounded-tl-none">
-                    I am fine
-                </div>
-                <div class="bg-white/20 rounded-lg p-3 m-2 text-white text-sm w-1/2 rounded-r-none rounded-tl-none">
-                    What about you?
-                </div>
-                <div class="bg-white/20 rounded-lg p-3 m-2 text-white text-sm w-1/2 rounded-r-none rounded-tl-none">
-                    I am fine too
-                </div>
-         
+  <body>
+    <pre class="chat-container flex flex-col overflow-y-scroll"></pre>
 
-             </div>
-
-                <div class="right-chat ">
-                    <div class="bg-white/20 rounded-lg p-3 m-2 text-white text-sm w-1/2 rounded-l-none rounded-tr-none">
-                        Hello
-                    </div>
-                    <div class="bg-white/20 rounded-lg p-3 m-2 text-white text-sm w-1/2 rounded-l-none rounded-tr-none">
-                        How are you?
-                    </div>
-               
-          
-                </div>
-
-
-            </div>
-            <div class="bg-white/15 container shadow-lg rounded-full relative">
-                <input type="text"
-                    class="border-2 px-2 pl-5 py-3 h-14 rounded-full placeholder-red-200 w-full bg-white/20 p border-white/20 p-2 pr-12 focus:ring-black/0"
-                    placeholder="Talk some thing!">
-                <button
-                    class="absolute m-2  bg-white/50  rounded-full inset-y-0 right-0 p-3  bg-gray-200  flex items-center justify-center">
-                    <svg class="" xmlns="http://www.w3.org/2000/svg" fill="#ffff" width="20px" height="20px"
-                        viewBox="0 0 512 512">
-                        <path
-                            d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <script>
-            const input = document.querySelector('input');
-            const button = document.querySelector('button');
-            button.addEventListener('click', () => {
-                const value = input.value;
-                if (value) {
-                    const div = document.createElement('div');
-                    div.classList.add('bg-white/20', 'rounded-lg', 'p-3', 'm-2', 'text-white', 'text-sm', 'w-1/2', 'rounded-r-none', 'rounded-tl-none');
-                    div.innerHTML = value;
-                    document.body.appendChild(div);
-                    input.value = '';
-                }
-            });
-        </script>
-</body>
-
+    <div class="message-box w-[620px] mx-auto">
+      <input
+        type="text"
+        id="myInput"
+        placeholder="Type your message..."
+        class="message-input rounded-full"
+      />
+      <button id="getValueButton" class="send-button rounded-full">Send</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>

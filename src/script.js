@@ -34,7 +34,7 @@ function generateUUID() {
 const sendMsg = async (msg) => {
 
     try {
-        const response = await fetch('http://127.0.0.1:5000/chat', {
+        const response = await fetch('http://localhost:8000/chat', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -53,7 +53,7 @@ const sendMsg = async (msg) => {
         // Create a function to handle the streamed data
         const handleStream = async () => {
 
-            const msgElement = document.createElement('div');
+            const msgElement = document.createElement('code');
             const uuid = generateUUID();
             msgElement.classList.add('message');
             msgElement.classList.add('receiver');
@@ -69,7 +69,8 @@ const sendMsg = async (msg) => {
                 if (done) break;
                 console.log(getMsg)
                 getMsg.textContent += decoder.decode(value, { stream: true });
-     }
+            }
+              getMsg.innerHTML =  marked.parse(getMsg.textContent); 
            
         };
 
